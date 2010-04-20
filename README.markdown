@@ -7,6 +7,7 @@ użyte w innych wersjach.
 
 # Instalacja
 `cd $Project_Dir$/vendor/extensions`
+
 `git clone git@github.com:kamilc/marki_modele.git`
 
 Masz pytania?
