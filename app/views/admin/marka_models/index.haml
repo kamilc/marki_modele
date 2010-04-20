@@ -1,0 +1,29 @@
+- render :partial => 'admin/shared/marki_modele_sub_menu'
+
+%h1 Marki i modele pojazdów
+
+.toolbar
+	%ul.actions
+		%li#new_ot_link
+			= button_link_to_remote "Dodaj model pojazdu", {:url => new_object_url, :method => :get, :update => "new-marka-model",                       :before => "Element.hide('new_ot_link');Element.show('busy_indicator')", :complete => "Element.hide('busy_indicator')"}, :icon => 'add'
+	%br.clear
+
+= image_tag "spinner.gif", :plugin=>"spree", :style => "display:none", :id => 'busy_indicator'
+#new-marka-model
+	&nbsp;
+
+- if not @collection.nil? and @collection.count > 0
+	%table.index
+		%tr
+			%th Marka
+			%th Model
+			%th Akcje
+		- @collection.each do |m|
+			%tr{ :id => "#{dom_id m}" }
+				%td= m.marka
+				%td= m.model
+				%td.actions
+					= link_to_delete m
+
+
+	

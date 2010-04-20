@@ -1,0 +1,11 @@
+- form_for(:marka_model,  :url => collection_url, :html => { :multipart => true }) do |f|
+	%fieldset
+		%h3 Nowy model pojazdu
+		-f.field_container "Nowy model pojazdu" do
+			= f.label "Marka:&nbsp;"
+			= f.select :marka, Marka.all.map { |t| [t.name, t.name] }, { :style => 'width: 400px;' }
+			%br.clearfix
+			= f.label "Model:&nbsp;"
+			= f.text_field :model
+			%br.clearfix
+			= f.submit "Dodaj"

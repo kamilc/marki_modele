@@ -1,0 +1,10 @@
+- form_for(:compatibility,  :url => collection_url, :html => { :multipart => true }) do |f|
+	%fieldset
+		%h3 Wybierz model pojazdu:
+		-f.field_container "Nowy model pojazdu" do
+			= f.label "Marka:&nbsp;"
+			= f.hidden_field :product_id, :value => parent_object.id.to_s
+			= f.select :marka_model_id, MarkaModel.all.map { |t| ["#{t.marka} #{t.model}", t.id] }, { :style => 'width: 400px;' }
+			%br.clearfix
+			= f.submit "Dodaj"
+/- link_to "Powrót do listy", admin_product_compatibilities_url parent_object
