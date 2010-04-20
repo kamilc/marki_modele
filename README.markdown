@@ -11,4 +11,6 @@ użyte w innych wersjach.
 `git clone git@github.com:kamilc/marki_modele.git`
 
 Masz pytania?
-Napisz do mnie: "ciemniewski.kamil@gmail.com"(mailto:ciemniewski.kamil@gmail.com)
+
+Napisz do mnie:
+<ciemniewski.kamil@gmail.com>
